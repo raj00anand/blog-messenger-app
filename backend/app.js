@@ -60,7 +60,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(procees.env.MONGO_URL)
+  .connect(process.env.MONGO_URL)
   .then(result => {
     const server = app.listen(process.env.PORT || 8080);
     const io = require('./socket').init(server);
